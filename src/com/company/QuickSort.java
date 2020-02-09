@@ -6,18 +6,21 @@ import java.util.Random;
 public class QuickSort {
 
     int size = 10;
-    int[] intArray = new int[10];
+    int[] intArray = {10, 3, 5, 9, 8, 4, 1, 3, 7, 2};
     Random random = new Random();
     int low = 0;
     int aux;
 
     public void buildArray() {
 
-    for(int i = 0; i<intArray.length;i++){
+//    for(int i = 0; i<intArray.length;i++){
+//
+////        intArray[i] = random.nextInt(10)+1;
+//        intArray[i] = random.nextInt(10)+1;
+//
+//    }
 
-        intArray[i] = random.nextInt(10)+1;
 
-    }
         System.out.println(Arrays.toString(intArray));
 }
     public void swap() {
@@ -30,26 +33,30 @@ public class QuickSort {
             while (intArray[low] > intArray[i]) {
                     i++;
                     if (i == intArray.length-1){
-
+                        aux = intArray[i];
+                        intArray[i] = intArray[low];
+                        intArray[low] = aux;
                         break;
                     }
-            }
 
-            aux = intArray[i];
+            }
+            if(i == j){break;}
+
+
 
             while(intArray[low] < intArray[j]) {
 
                 j--;
             }
 
-
+            aux = intArray[i];
             intArray[i] = intArray[j];
             intArray[j] = aux;
             System.out.println(Arrays.toString(intArray));
+            i++;
+            j--;
         }
-        aux = intArray[j-1];
-        intArray[j-1] = intArray[low];
-        intArray[low] = aux;
+
         System.out.println(Arrays.toString(intArray));
     }
 
