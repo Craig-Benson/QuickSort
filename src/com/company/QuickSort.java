@@ -25,7 +25,7 @@ public class QuickSort {
         int aux;
 
         for(int i =0; intArray[i] < low;i++){
-            
+
 
         }
 
